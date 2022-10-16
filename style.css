@@ -38,7 +38,7 @@ header .wrapper .hidden{
 
 header .wrapper h1 {
     font-size:1.5rem;
-    margin-left:10px;
+    margin-left:20px;
     transition:200ms linear;
     float:left;
 }
@@ -47,7 +47,7 @@ header .wrapper ul {
     right:0;
     position:absolute;
     list-style: none;
-    margin-right:10px;
+    margin-right:20px;
     width:100px;
     display:flex;
     justify-content: space-between;
@@ -76,18 +76,77 @@ header .wrapper ul li button {
     cursor:pointer;
 }
 
+section#search {
+    position:absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition:300ms;
+    top:70px;
+    height:calc(100vh - 70px);
+    width:100%;
+    display:Flex;
+    justify-content: center;
+}
+
+section#search button {
+    color:black;
+    background: none;
+	border: none;
+	padding: 0;
+    margin:0;
+    cursor:pointer;
+}
+
+section#search.switched {
+    visibility: visible;
+    opacity: 1;
+}
+
+section#search .searchbar {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height:30px;
+    width:70%;
+}
+
+section#search .searchbar button{   
+    background:none;
+    position:relative;
+    z-index: 1;
+    top:2px;
+}
+
+section#search .searchbar button.icon{   
+    left:calc(16px + 11px);
+    color:black;
+    top:8px;
+    height:16px;
+}
+
+section#search .searchbar button.clear{   
+    right:calc(16px + 6px);
+    height:16px;
+    top:8px;
+}
 
 
+section#search .searchbar input[type='search'] {
+    position:relative;
+    width:100%;
+    max-width:500px;
+    padding:0px 20px 0px 30px;
+    border-radius:500px;
+    outline:none;
+    border:1px solid rgb(182, 182, 182);
+    text-overflow: ellipsis;
+    font-family: 'Raleway', sans-serif;
+}
 
+section#search .searchbar input::-webkit-search-cancel-button{
+    display:none;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+.disabled {
+    display:none;
+}
